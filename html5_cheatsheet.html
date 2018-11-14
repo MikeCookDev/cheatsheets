@@ -14,6 +14,13 @@
 					<li>Intro to  HTML5</li></a>
 				<a href="#Content_Models" class="nav-link">
 					<li>Content Models</li></a>
+				<a href="#HTML5_Page_Structure" class="nav-link">
+					<li>HTML5 Page Structure</li></a>
+				<a href="#header_nav_footer" class="nav-link">
+					<li>header, nav, & footer</li></a>
+				<a href="#article_section_aside" class="nav-link">
+					<li>article, section, & aside</li></a>
+
 				
 			</ul>
 	</nav>
@@ -121,12 +128,166 @@
 							</p>	
 							<p>
 								The same element can belong to more than one content model.
-							</p>			
-
-
-
-
-				
+							</p>
+						<h4>Content Models</h4>
+							<p>
+								<strong>Flow content</strong>:<br> Contains the majority of HTML5 elements that would be included in the normal flow of the document.
+							</p>
+							<p>
+								<strong>Sectioning content</strong>:<br> Defines the scope of headings, content, navigation, and footers.<br>
+								Elements: <code>&lt;article&gt;, &lt;aside&gt;, &lt;nav&gt;, &lt;section&gt;</code>
+							</p>
+							<p>
+								<img src="https://api.sololearn.com/DownloadFile?id=2546" alt="" align="center"><br>
+								The various content models overlap in certain areas, depending on how they are being used.
+							</p>
+				</section>
+				<section class="main-section" id="HTML5_Page_Structure">
+					<header>HTML5 Page Structure</header>
+						<h4>Page Structure in HTML5</h4>
+							<p>A generic HTML5 page structure looks like this:<br>
+								<img src="https://api.sololearn.com/DownloadFile?id=2471" alt="">
+							</p>
+							<p>
+								You may not need some of these elements, depending on your page structure.
+							</p>
+				</section>
+				<section class="main-section" id="header_nav_footer">
+					<header>header, nav, & footer</header>
+						<h4>The <code>&lt;header&gt;</code> Element</h4>
+							<p>
+								In HTML4, we would define a header like this:
+								<code>
+									&lt;div id="header"&gt;
+								</code>
+							</p>
+							<p>
+								In HTML5, a simple <code>&lt;header&gt;</code> tag is used, instead.
+							</p>
+							<p>
+								The <code>&lt;header&gt;</code> element is appropriate for use inside the body tag.
+							</p>
+							<p>
+								<code>
+									&lt;!DOCTYPE html&gt; <br>
+									&lt;html&gt; <br>
+									   &lt;head&gt;&lt;/head&gt; <br>
+									   &lt;body&gt; <br>
+									      <strong>&lt;header&gt;</strong> <br>
+									        &lt;h1&gt; Most important heading &lt;/h1&gt; <br>
+									        &lt;h3&gt; Less important heading &lt;/h3&gt; <br>
+									      <strong>&lt;/header&gt;</strong> <br>
+									   &lt;/body&gt; <br>
+									&lt;/html&gt;
+								</code>
+							</p>
+							<p>
+								Note that the <code>&lt;header&gt;</code> is completely different from the <code>&lt;head&gt;</code> tag.
+							</p>
+						<h4>The <code>&lt;footer&gt;</code> Element</h4>
+							<p>
+								The footer element is also widely used. Generally we refer to a section located at the very bottom of the web page as the footer.
+							</p>
+							<p>
+								<code>
+									&lt;footer&gt;>…&lt;/footer&gt;
+								</code>
+							</p>
+							<p>
+								The following information is usually provided between these tags:<br>
+								- Contact Information<br>
+								- Privacy Policy<br>
+								- Social Media Icons<br>
+								- Terms of Service<br>
+								- Copyright Information<br>
+								- Sitemap and Related Documents<br>
+							</p>
+						<h4>The <code>&lt;nav&gt;</code> Element</h4>
+							<p>
+								This tag represents a section of a page that links to other pages or to certain sections within the page. This would be a section with navigation links. 
+							</p>
+							<p>
+								Here is an example of a major block of navigation links:
+							</p>
+							<p>
+								<code>
+									<strong>&lt;nav&gt;</strong><br>
+									   &lt;ul&gt;<br>
+									      &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;<br>
+									      &lt;li&gt;&lt;a href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;<br>
+									      &lt;li&gt;&lt;a href="#"&gt;About us&lt;/a&gt;&lt;/li&gt;<br>
+									   &lt;/ul&gt;<br>
+									<strong>&lt;/nav&gt;</strong><br>
+								</code>
+							</p>
+							<p>
+								Not all of the links in a document should be inside a <code>&lt;nav&gt;</code> element. The <code>&lt;nav&gt;</code> element is intended only for major blocks of navigation links. Typically, the <code>&lt;footer&gt;</code> element often has a list of links that don't need to be in a <code>&lt;nav&gt;</code> element.
+							</p>
+				<section class="main-section" id="article_section_aside">
+					<header>article, section, & aside</header>
+						<h4>The <code>&lt;article&gt;</code> Element</h4>
+							<p>
+								<strong>Article</strong> is a self-contained, independent piece of content that can be used and distributed separately from the rest of the page or site. This could be a forum post, a magazine or newspaper article, a blog entry, a comment, an interactive widget or gadget, or any other independent piece of content. 
+							</p>
+							<p>
+								The <code>&lt;article&gt;</code> element replaces the <code>&lt;div&gt;</code> element that was widely used in HTML4, along with an id or class.
+							</p>
+							<p>
+								<code>
+									<strong>&lt;article&gt;</strong> <br>
+									   &lt;h1&gt;The article title&lt;/h1&gt;<br> 
+									  &lt;p&gt;Contents of the article element &lt;/p&gt;<br>
+									<strong>&lt;/article&gt;</strong>
+								</code>
+							</p>
+							<p>
+								When an <code>&lt;article&gt;</code> element is nested, the inner element represents an article related to the outer element. For example, blog post comments can be <code>&lt;article&gt</code>; elements nested in the <code>&lt;article&gt;</code> representing the blog post.
+							</p>
+						<h4>The <code>&lt;section&gt;</code> Element</h4>
+							<p>
+								<code>&lt;section&gt;</code> is a logical container of the page or article. <br>
+								Sections can be used to divide up content within an article.<br> 
+								For example, a homepage could have a section for introducing the company, another for news items, and still another for contact information.<br>
+							</p>
+							<p>
+								Each <code>&lt;section&gt;</code> should be identified, typically by including a heading (h1-h6 element) as a child of the <code>&lt;section&gt;</code> element.
+							</p>
+							<p>
+								<code>
+									&lt;article&gt;<br>
+									   &lt;h1&gt;Welcome&lt;/h1&gt;<br>
+									   <strong>&lt;section&gt;</strong><br>
+									      &lt;h1&gt;Heading&lt;/h1&gt;<br>
+									      &lt;p&gt;content or image&lt;/p&gt;<br>
+									   <strong>&lt;/section&gt;</strong><br>
+									&lt;/article&gt;<br>
+								</code>
+							</p>
+							<p>
+								If it makes sense to separately syndicate the content of a <code>&lt;section&gt;</code> element, use an <code>&lt;article&gt;</code> element instead.
+							</p>
+						<h4>The <code>&lt;aside&gt;</code> Element</h4>
+							<p>
+								<code>&lt;aside&gt;</code> is secondary or tangential content which could be considered separate from but indirectly related to the main content.<br>
+								This type of content is often represented in sidebars.<br>
+								When an <code>&lt;aside&gt;</code> tag is used within an <code>&lt;article&gt;</code> tag, the content of the <code>&lt;aside&gt;</code> should be specifically related to that article.<br>
+							</p>
+							<p>
+								<code>
+									&lt;article&gt;<br>
+									   &lt;h1&gt; Gifts for everyone &lt;/h1&gt;<br>
+									   &lt;p&gt; This website will be the best place for choosing gifts &lt;/p&gt;<br>
+									   <strong>&lt;aside&gt;</strong><br>
+									      &lt;p&gt; Gifts will be delivered to you within 24 hours &lt;/p&gt;<br>
+									   <strong>&lt;/aside&gt;</strong><br>
+									&lt;/article&gt;
+								</code>
+							</p>
+							<p>
+								When an <code>&lt;aside&gt;</code> tag is used outside of an <code>&lt;article&gt;</code> tag, its content should be related to the surrounding content.
+							</p>
+				</section>
+			
 			</main>
 	
 </body>
