@@ -20,6 +20,14 @@
 					<li>header, nav, & footer</li></a>
 				<a href="#article_section_aside" class="nav-link">
 					<li>article, section, & aside</li></a>
+				<a href="#audio" class="nav-link">
+					<li>The audio Element</li></a>
+				<a href="#video" class="nav-link">
+					<li>The video Element</li></a>
+				<a href="#Progress" class="nav-link">
+					<li>The progress Element</li></a>
+				<a href="#Web_Storage_API" class="nav-link">
+					<li>Web Storage API</li></a>
 
 				
 			</ul>
@@ -287,7 +295,199 @@
 								When an <code>&lt;aside&gt;</code> tag is used outside of an <code>&lt;article&gt;</code> tag, its content should be related to the surrounding content.
 							</p>
 				</section>
-			
-			</main>
+				<section class="main-section" id="audio">
+					<header>The audio Element</header>
+						<h4>Audio on the Web</h4>
+							<p>
+								Before HTML5, there was no standard for playing audio files on a web page.<br>
+								The HTML5 <code>&lt;audio&gt;</code> element specifies a standard for embedding audio in a web page.
+							</p>
+							<p>
+								There are two different ways to specify the audio source file's URL. The first uses the source attribute:
+							</p>
+							<p>
+								<code>
+									&lt;<strong>audio</strong> src="audio.mp3" controls&gt;<br>
+									   Audio element not supported by your browser<br>
+									&lt;/<strong>audio</strong>&gt;
+								</code>
+							</p>
+							<p>
+								The second way uses the <code>&lt;source&gt;</code> element inside the <code>&lt;audio&gt;</code> element:
+							</p>
+							<p>
+								<code>
+									&lt;<strong>audio controls</strong>&gt;<br>
+									   &lt;source src="audio.mp3" type="audio/mpeg"&gt;<br>
+									   &lt;source src="audio.ogg" type="audio/ogg"&gt;<br>
+									&lt;/<strong>audio</strong>&gt;
+								</code>
+							</p>
+							<p>
+								Multiple <code>&lt;source&gt;</code> elements can be linked to different audio files. The browser will use the first recognized format.
+							</p>
+							<p>
+								The <code>&lt;audio&gt;</code> element creates an audio player inside the browser.
+							</p>
+							<p>
+								<code>
+									&lt;audio controls&gt;<br>
+									   &lt;source src="audio.mp3" type="audio/mpeg"&gt;<br>
+									   &lt;source src="audio.ogg" type="audio/ogg"&gt;<br>
+									   Audio element not supported by your browser.<br> 
+									&lt;/audio&gt;
+								</code>
+							</p>
+							<p>
+								The text between the <code>&lt;audio&gt;</code> and <code>&lt;/audio&gt;</code> tags will display in browsers that do not support the <code>&lt;audio&gt;</code> element.
+							</p>
+						<h4>Attributes of <code>&lt;audio&gt;</code></h4>
+							<p>
+								<strong>controls</strong><br>
+								Specifies that audio controls should be displayed (such as a play/pause button, etc.)
+							</p>
+							<p>
+								<strong>autoplay</strong><br>
+								When this attribute is defined, audio starts playing as soon as it is ready, without asking for the visitor's permission.
+							</p>
+							<p>
+								<code>
+									&lt;audio controls autoplay&gt;
+								</code>
+							</p>
+							<p>
+								<strong>loop</strong><br>
+								This attribute is used to have the audio replay every time it is finished.
+							</p>
+							<p>
+								<code>
+									&lt;audio controls autoplay loop&gt;
+								</code>
+							</p>
+							<p>
+								Currently, there are three supported file formats for the <code>&lt;audio&gt;</code> element: MP3, WAV, and OGG.
+							</p>
+				</section>
+				<section class="main-section" id="video">
+					<header>The video Element</header>
+						<h4>Videos in HTML</h4>
+							<p>
+								The video element is similar to the audio element. <br>
+								You can specify the video source URL using an attribute in a video element, or using source elements inside the video element:<br>
+							</p>
+							<p>
+								<code>
+									<strong>&lt;video controls&gt;</strong><br>
+									   &lt;source src="video.mp4" type="video/mp4"&gt;<br>
+									   &lt;source src="video.ogg" type="video/ogg"&gt;<br>
+									   Video is not supported by your browser<br>
+									<strong>&lt;/video&gt;</strong>
+								</code>
+							</p>
+							<p>
+								Another aspect that the audio and video elements have in common is that the major browsers do not all support the same file types. If the browser does not support the first video type, it will try the next one.
+							</p>
+						<h4>Attributes of &lt;video&gt;</h4>
+							<p>
+								Another aspect shared by both the audio and the video elements is that each has <strong>controls</strong>, <strong>autoplay</strong> and <strong>loop</strong> attributes. 
+							</p>
+							<p>
+								In this example, the video will replay after it finishes playing:
+							</p>
+							<p>
+								<code>
+									&lt;video controls <strong>autoplay loop</strong>&gt;<br>
+									   &lt;source src="video.mp4" type="video/mp4"&gt;<br>
+									   &lt;source src="video.ogg" type="video/ogg"&gt;<br>
+									   Video is not supported by your browser<br>
+									&lt;/video&gt;
+								</code>
+							</p>
+							<p>
+								Currently, there are three supported video formats for the <code>&lt;video&gt;</code> element: MP4, WebM, and OGG.
+							</p>
+				</section>
+				<section class="main-section" id="Progress">
+					<header>The progress Element</header>
+						<h4>Progress Bar</h4>
+							<p>
+								The <code>&lt;progress&gt;</code> element provides the ability to create progress bars on the web.<br>
+								The progress element can be used within headings, paragraphs, or anywhere else in the body.
+							</p>
+							<p>
+								<strong>Progress Element Attributes</strong><br>
+								<strong>Value</strong>: Specifies how much of the task has been completed. <br>
+								<strong>Max</strong>: Specifies how much work the task requires in total.
+							</p>
+							<p>
+								<strong>Example</strong>:<br>
+								<code>
+									Status: &lt;progress min="0" <strong>max</strong>="100" <strong>value</strong>="35"&gt;<br>
+									&lt;/<strong>progress</strong>&gt;
+								</code>
+							</p>
+							<p>
+								Use the <code>&lt;progress&gt;</code> tag in conjunction with JavaScript to dynamically display a task's progress.
+							</p>
+				<section class="main-section" id="Web_Storage_API">
+					<header>Web Storage API</header>
+						<h4>HTML5 Web Storage</h4>
+							<p>
+								With HTML5 web storage, websites can store data on a user's local computer. <br>
+								Before HTML5, we had to use <strong>JavaScript cookies</strong> to achieve this functionality. 
+							</p>
+							<p>
+								<strong>The Advantages of Web Storage</strong><br>
+								- More secure<br>
+								- Faster<br>
+								- Stores a larger amount of data<br>
+								- Stored data is not sent with every server request
+							</p>
+							<p>
+								Local storage is per domain. All pages from one domain can store and access the same data.
+							</p>
+						<h4>Types of Web Storage Objects</h4>
+							<p>
+								There are two types of web storage objects:<br>
+								<strong>- sessionStorage()<br>
+								- localStorage()</strong>
+							</p>
+							<p>
+								<strong>Local vs. Session</strong><br>
+								- Session Storage is destroyed once the user closes the browser<br>
+								- Local Storage stores data with no expiration date
+							</p>
+							<p>
+								You need to be familiar with basic JavaScript in order to understand and use the API.
+							</p>
+						<h4>Working with Values</h4>
+							<p>
+								The syntax for web storage for both local and session storage is very simple and similar.<br>
+								The data is stored as key/value pairs.
+							</p>
+							<p>
+								<strong>Storing a Value:</strong><br>
+								<code>localStorage.<strong>setItem</strong>("key1", "value1");</code>
+							</p>
+							<p>
+								<strong>Getting a Value:</strong><br>
+								<code>//this will print the value<br>
+								alert(localStorage.<strong>getItem</strong>("key1")); </code>
+							</p>
+							<p>
+								<strong>Removing a Value:</strong><br>
+								<code>localStorage.<strong>removeItem</strong>("key1");</code>
+							</p>
+							<p>
+								<strong>Removing All Values:</strong><br>
+								<code>localStorage.<strong>clear</strong>();</code>
+							</p>
+							<p>
+								The same syntax applies to the session storage, with one difference:<br> Instead of localStorage, sessionStorage is used.
+							</p>
+					</section>
+
+
+		</main>
 	
 </body>
