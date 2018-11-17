@@ -34,6 +34,10 @@
 					<li>Drag & Drop API</li></a>
 				<a href="#SVG" class="nav-link">
 					<li>SVG</li></a>
+				<a href="#SVG_Animations_&_Paths" class="nav-link">
+					<li>SVG Animations & Paths</li></a>
+				<a href="#Canvas" class="nav-link">
+					<li>Canvas</li></a>
 
 				
 			</ul>
@@ -768,6 +772,197 @@
 									Polygon comes from Greek. "Poly" means "many" and "gon" means "angle."
 								</p>
 					</section>
+					<section class="main-section" id="SVG_Animations_&_Paths">
+						<header>SVG Animations & Paths</header>
+							<h4>Shape Animations</h4>
+								<p>
+									SVG animations can be created using the <code>&lt;animate&gt;</code> element. 
+								</p>
+								<p>
+									The example below creates a rectangle that will change its position in 3 seconds and will then repeat the animation twice:
+								</p>
+								<p>
+									<code>
+										&lt;svg width="1000" height="250"&gt;<br>
+										&lt;rect width="150" height="150" fill="orange"&gt;<br>
+										  &lt;animate attributeName="x" from="0" to="300"<br>
+										    dur="3s" fill="freeze" repeatCount="2"/&gt;<br> 
+										&lt;/rect&gt;<br>
+										&lt;/svg&gt;
+									</code>
+								</p>
+								<p>
+									<strong>attributeName</strong>: Specifies which attribute will be affected by the animation<br>
+									<strong>from</strong>: Specifies the starting value of the attribute<br>
+									<strong>to</strong>: Specifies the ending value of the attribute<br>
+									<strong>dur</strong>: Specifies how long the animation runs (duration)<br>
+									<strong>fill</strong>: Specifies whether or not the attribute's value should return to its initial value when the animation is finished (Values: "remove" resets the value; "freeze" keeps the “to value”)<br>
+									<strong>repeatCount</strong>: Specifies the repeat count of the animation
+								</p>
+								<p>
+									In the example above, the rectangle changes its x attribute from 0 to 300 in 3 seconds.
+								</p>
+								<p>
+									To repeat the animation indefinitely, use the value "<strong>indefinite</strong>" for the repeatCount attribute.
+								</p>
+							<h4>Paths</h4>
+								<p>
+									The <code>&lt;path&gt;</code> element is used to define a path.
+								</p>
+								<p>
+									The following commands are available for path data:<br>
+									<br><strong>M</strong>: moveto<br>
+									<strong>L</strong>: lineto<br>
+									<strong>H</strong>: horizontal lineto<br>
+									<strong>V</strong>: vertical lineto<br>
+									<strong>C</strong>: curveto<br>
+									<strong>S</strong>: smooth curveto<br>
+									<strong>Q</strong>: quadratic Bézier curve<br>
+									<strong>T</strong>: smooth quadratic Bézier curveto<br>
+									<strong>A</strong>: elliptical Arc<br>
+									<strong>Z</strong>: closepath<br>
+								</p>
+								<p>
+									Define a path using the d attribute:
+								</p>
+								<p>
+									<code>
+										&lt;svg width="500" height="500"&gt;<br>
+										&lt;<strong>path</strong> d="M 0 0 L200 200 L200 0 Z"<br> style="stroke:#000;  fill:none;" /&gt;<br>
+										&lt;/svg&gt;
+									</code>
+								</p>
+								<p>
+									M places our "virtual pen" down at the position 0, 0. It then moves 200px down and to the right, then moves up to the position 200, 0. The Z command closes the shape, which results in a hypotenuse:
+								</p>
+								<p>
+									All of the above commands can also be expressed with lower case letters. When capital letters are used, it indicates absolute position; lower case indicates relative position.
+								</p>
+					</section>
+					<section class="main-section" id="Canvas">
+						<header>Canvas</header>
+							<h4>The <code>&lt;canvas&gt;</code> Element</h4>
+								<p>
+									The HTML canvas is used to draw graphics that include everything from simple lines to complex graphic objects.
+								</p>
+								<p>
+									The <code>&lt;canvas&gt;</code> element is defined by:
+								</p>
+								<p>
+									<code>
+										&lt;canvas id="canvas1" width="200" height="100"&gt;<br>
+										&lt;/canvas&gt;
+									</code>
+								</p>
+								<p>
+									The <code>&lt;canvas&gt;</code> element is only a container for graphics. You must use a script to actually draw the graphics (usually JavaScript).
+								</p>
+								<p>
+									The <code>&lt;canvas&gt;</code> element must have an <strong>id attribute</strong> so it can be referred to by JavaScript:
+								</p>
+								<p>
+									<code>
+										&lt;html&gt;<br>
+										   &lt;head&gt;&lt;/head&gt;<br>
+										   &lt;body&gt;<br>
+										     <strong>&lt;canvas id=</strong>"canvas1" <br>
+										   width="400" height="300"&gt;<strong>&lt;/canvas&gt;</strong><br> 
+												<br>
+										   &lt;script&gt;<br>
+										      var can = document.getElementById("canvas1");<br> 
+										      var ctx = can.getContext("2d");<br>
+										   &lt;/script&gt;<br>
+												<br>
+										   &lt;/body&gt;<br>
+										&lt;/html&gt;<br>
+									</code>
+								</p>
+								<p>
+									<strong>getContext()</strong> returns a drawing context on the canvas.
+								</p>
+								<p>
+									Basic knowledge of JavaScript is required to understand and use the Canvas.
+								</p>
+							<h4>Canvas Coordinates</h4>
+								<p>
+									The HTML canvas is a two-dimensional grid.<br>
+									The upper-left corner of the canvas has the coordinates (0,0).
+								</p>
+								<p>
+									X coordinate increases to the right.<br>
+									Y coordinate increases toward the bottom of the canvas.<br>
+
+									<img src="https://api.sololearn.com/DownloadFile?id=2556" alt="">
+								</p>
+								<p>
+									The <code>&lt;canvas&gt;</code> element is only a container for graphics.
+								</p>
+							<h4> Drawing Shapes</h4>
+								<p>
+									The <strong>fillRect(x, y, w, h)</strong> method draws a "filled" rectangle, in which w indicates width and h indicates height. The default fill color is black.
+								</p>
+								<p>
+									A black 100*100 pixel rectangle is drawn on the canvas at the position (20, 20):
+								</p>
+								<p>
+									<code>
+										var c=document.getElementById("canvas1");<br>
+										var ctx=c.getContext("2d");<br>
+										ctx.<strong>fillRect</strong>(20,20,100,100);
+									</code><br>
+
+									<strong>Result:</strong><br>
+
+									<img src="https://api.sololearn.com/DownloadFile?id=2557" alt="">
+
+								</p>
+								<p>
+									The <strong>fillStyle</strong> property is used to set a color, gradient, or pattern to fill the drawing.<br>
+									Using this property allows you to draw a green-filled rectangle.
+								</p>
+								<p>
+									<code>
+										var canvas=document.getElementById("canvas1");<br>
+										var ctx=canvas.getContext("2d");<br>
+										ctx.fillStyle ="rgba(0, 200, 0, 1)";<br>
+										ctx.fillRect (36, 10, 22, 22);<br>
+									</code><br>
+
+									<strong>Result:</strong><br>
+									
+									<img src="https://api.sololearn.com/DownloadFile?id=2558" alt="">
+								</p>
+								<p>
+									The canvas supports various other methods for drawing:
+								</p>
+								<p>
+									<strong>Draw a Line</strong><br>
+									moveTo(x,y): Defines the starting point of the line.<br>
+									lineTo(x,y): Defines the ending point of the line.
+								</p>
+								<p>
+									<strong>Draw a Circle</strong><br>
+									beginPath(): Starts the drawing.<br>
+									arc(x,y,r,start,stop): Sets the parameters of the circle.<br>
+									stroke(): Ends the drawing.
+								</p>
+								<p>
+									<strong>Gradients</strong><br>
+									createLinearGradient(x,y,x1,y1): Creates a linear gradient.<br>
+									createRadialGradient(x,y,r,x1,y1,r1): Creates a radial/circular gradient.
+								</p>
+								<p>
+									<strong>Drawing Text on the Canvas</strong><br>
+									Font: Defines the font properties for the text.<br>
+									fillText(text,x,y): Draws "filled" text on the canvas.<br>
+									strokeText(text,x,y): Draws text on the canvas (no fill).
+								</p>
+								<p>
+									There are many other methods aimed at helping to draw shapes and images on the canvas.
+								</p>
+					</section>
+
+
 
 
 		</main>
